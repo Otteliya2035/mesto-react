@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ad4e8f5d.css",
+    "main.js": "/static/js/main.07d35f50.js",
+    "static/js/787.5530211c.chunk.js": "/static/js/787.5530211c.chunk.js",
+    "static/media/Inter-Medium.woff": "/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
+    "static/media/Inter-Black.woff": "/static/media/Inter-Black.c6938660eec019fefd68.woff",
+    "static/media/Inter-Regular.woff": "/static/media/Inter-Regular.8c206db99195777c6769.woff",
+    "static/media/Inter-Medium.woff2": "/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
+    "static/media/Inter-Black.woff2": "/static/media/Inter-Black.15ca31c0a2a68f76d2d1.woff2",
+    "static/media/Inter-Regular.woff2": "/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
+    "static/media/Логотип.svg": "/static/media/Логотип.bbe2a6eafac19c3d031c272c424875ca.svg",
+    "static/media/Like.svg": "/static/media/Like.1ad06e85f169668a1f36.svg",
+    "index.html": "/index.html",
+    "static/media/deletebtn.svg": "/static/media/deletebtn.ce3b64935accf9b8212e.svg",
+    "static/media/Likeblack.svg": "/static/media/Likeblack.dd6a61e81552be95f4b7.svg",
+    "static/media/Редактировать-профиль.svg": "/static/media/Редактировать-профиль.6c7bf05444b9793fdf6e.svg",
+    "static/media/Close-Icon.svg": "/static/media/Close-Icon.039f1f5203f653b4bacd.svg",
+    "static/media/addButton.svg": "/static/media/addButton.bed8c136e13907f5eefb.svg",
+    "static/media/addbtn-smoll.svg": "/static/media/addbtn-smoll.d5d6f8af0577b9c95ee4.svg",
+    "static/media/Close-Iconmob.svg": "/static/media/Close-Iconmob.622e8cdafa2222aa7c54.svg",
+    "main.ad4e8f5d.css.map": "/static/css/main.ad4e8f5d.css.map",
+    "main.07d35f50.js.map": "/static/js/main.07d35f50.js.map",
+    "787.5530211c.chunk.js.map": "/static/js/787.5530211c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ad4e8f5d.css",
+    "static/js/main.07d35f50.js"
+  ]
+}
