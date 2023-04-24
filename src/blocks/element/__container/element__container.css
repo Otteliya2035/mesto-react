@@ -1,0 +1,8 @@
+.element__container {
+  position: relative;
+  max-width: 282px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 0;
+  overflow: hidden;
+}
