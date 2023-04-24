@@ -23,3 +23,7 @@
 - ООП
 - API
 - React
+
+Ссылка на проект
+
+- https://Otteliya2035.github.io/mesto-react/
