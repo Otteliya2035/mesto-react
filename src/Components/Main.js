@@ -8,15 +8,6 @@ function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick }) {
   const [userDescription, setUserDescription] = useState("");
   const [userAvatar, setUserAvatar] = useState("");
   const [cards, setCards] = useState([]);
-  const [selectedCard, setSelectedCard] = React.useState(null);
-
-  function handleCardClick(card) {
-    setSelectedCard(card);
-  }
-
-  function handleClose() {
-    setSelectedCard(null);
-  }
 
   useEffect(() => {
     Promise.all([api.getUserInfo(), api.getInitialCards()])

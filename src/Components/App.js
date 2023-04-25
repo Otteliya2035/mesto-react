@@ -55,6 +55,7 @@ function App() {
         isOpen={isEditProfilePopupOpen}
         onClose={closeAllPopups}
         btnText="Сохранить"
+       
       >
         <form
           className="popup__form popup__form-profile"
@@ -141,7 +142,7 @@ function App() {
         onClose={closeAllPopups}
         btnText="Сохранить"
       >
-        <form className="popup__form-avatar" name="form" novalidate>
+        <form className="popup__form popup__form-avatar" name="form" novalidate>
           <input
             className="popup__field popup__field_input_avatar"
             name="link"
