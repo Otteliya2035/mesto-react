@@ -17,18 +17,18 @@ class Api {
     );
   }
 
-  editUserInfo({ name, profession }) {
+  setUserInfo({ name, description }) {
     return fetch(`${this._url}/users/me`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
         name: name,
-        about: profession,
+        about: description,
       }),
     }).then((res) => this._checkResponse(res));
   }
 
-  editAvatar({ avatar }) {
+  setUserAvatar({ avatar }) {
     return fetch(`${this._url}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
