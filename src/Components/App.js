@@ -3,7 +3,6 @@ import "../index.css";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
-import PopupWithForm from "./PopupWidthForm";
 import ImagePopup from "../Components/ImagePopup";
 import api from "../utils/api";
 import CurrentUserContext from "../contexts/CurrentUserContext";
@@ -14,6 +13,7 @@ import AddPlacePopup from "../Components/AddPlacePopup";
 function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [cards, setCards] = useState([]);
+
   useEffect(() => {
     Promise.all([api.getUserInfo(), api.getInitialCards()])
       .then(([userData, initialCards]) => {
@@ -22,9 +22,10 @@ function App() {
       })
       .catch((err) => console.log(err));
   }, []);
+
   function handleUpdateUser({ name, about }) {
     api
-      .setUserInfo({ name, about })
+      .setUserInfo({ name, description: about })
       .then((data) => {
         setCurrentUser(data);
         closeAllPopups();
@@ -32,8 +33,6 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-      console.log(name)
-      console.log(about)
   }
 
   function handleUpdateAvatar({ avatar }) {
@@ -82,6 +81,7 @@ function App() {
   function handleCardClick(card) {
     setSelectedCard(card);
   }
+
   function handleCardDelete(card) {
     api
       .deleteCard(card._id)
@@ -136,12 +136,12 @@ function App() {
           onCardClick={handleCardClick}
           onCardLike={handleCardLike}
           onCardDelete={handleCardDelete}
-
+          cards={cards}
         />
         <Footer />
         <ImagePopup card={selectedCard} onClose={closeAllPopups} />
         <EditProfilePopup
-        currentUser={currentUser}
+          currentUser={currentUser}
           isOpen={isEditProfilePopupOpen}
           onClose={closeAllPopups}
           onUpdateUser={handleUpdateUser}

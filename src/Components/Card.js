@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../index.css";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
@@ -6,15 +6,17 @@ function Card(props) {
   const currentUser = useContext(CurrentUserContext);
 
   const isOwn = props.card.owner._id === currentUser._id;
-  const isLiked = props.card.likes.some((i) => i._id === currentUser._id);
+  const isLikedBefore = props.card.likes.some((i) => i._id === currentUser._id);
+  const [liked, setLiked] = useState(isLikedBefore);
+  const [likesCount, setLikesCount] = useState(props.card.likes.length);
+
   function handleClick() {
     props.onCardClick(props.card);
   }
-  const handleLikeClick = () => {
-    props.onCardLike(props.card);
-  };
 
   function handleCardLike() {
+    setLiked(!liked);
+    setLikesCount(liked ? likesCount - 1 : likesCount + 1);
     props.onCardLike(props.card);
   }
 
@@ -44,13 +46,11 @@ function Card(props) {
             <button
               type="button"
               className={`element__like-btn ${
-                isLiked ? "element__like-btn_active" : ""
+                liked ? "element__like-btn_active" : ""
               }`}
               onClick={handleCardLike}
             ></button>
-            <span className="element__like-count">
-              {props.card.likes.length}
-            </span>
+            <span className="element__like-count">{likesCount}</span>
           </div>
         </figcaption>
       </figure>

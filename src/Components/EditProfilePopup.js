@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PopupWithForm from "../Components/PopupWidthForm";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
-function EditProfilePopup({isOpen, onClose, onUpdateUser }) {
+function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
   const currentUser = React.useContext(CurrentUserContext);
   const [name, setName] = React.useState(currentUser.name);
   const [description, setDescription] = React.useState(currentUser.about);
@@ -29,8 +29,6 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser }) {
     setDescription(event.target.value);
   };
 
- // console.log("name:", name);
- // console.log("description:", description);
   return (
     <PopupWithForm
       title="Редактировать профиль"

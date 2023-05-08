@@ -11,18 +11,9 @@ function Main({
   onCardClick,
   onCardLike,
   onCardDelete,
+  cards,
 }) {
   const currentUser = useContext(CurrentUserContext);
-
-  const [cards, setCards] = useState([]);
-
-  useEffect(() => {
-    Promise.all([api.getUserInfo(), api.getInitialCards()])
-      .then(([userInfo, initialCards]) => {
-        setCards(initialCards);
-      })
-      .catch((err) => console.log(err));
-  }, []);
 
   return (
     <>
