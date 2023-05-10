@@ -1,11 +1,9 @@
 import React, { useState, useContext } from "react";
 import PopupWithForm from "../Components/PopupWidthForm";
 import api from "../utils/api";
-import CurrentUserContext from "../contexts/CurrentUserContext";
 function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
   const [name, setName] = useState("");
   const [link, setLink] = useState("");
-  const currentUser = React.useContext(CurrentUserContext);
   function handleSubmit(evt) {
     evt.preventDefault();
 

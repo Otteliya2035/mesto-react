@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../index.css";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
@@ -108,11 +107,7 @@ function App() {
         .addLikeCard(card._id)
         .then((newCard) => {
           setCards((cards) =>
-            cards.map((c) =>
-              c._id === card._id
-                ? { ...newCard, likes: newCard.likes.concat(currentUser) }
-                : c
-            )
+            cards.map((c) => (c._id === card._id ? { ...newCard } : c))
           );
         })
         .catch((error) => console.log(error));
@@ -141,7 +136,6 @@ function App() {
         <Footer />
         <ImagePopup card={selectedCard} onClose={closeAllPopups} />
         <EditProfilePopup
-          currentUser={currentUser}
           isOpen={isEditProfilePopupOpen}
           onClose={closeAllPopups}
           onUpdateUser={handleUpdateUser}
